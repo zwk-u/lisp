@@ -14,6 +14,7 @@ public class AggregateNode extends LispNode {
     public AggregateNode(StringTerminalNode aggFuncName, IntTerminalNode id) {
         this.aggFuncName = aggFuncName;
         this.id = id;
+        setChildrenParent();
     }
 
     public AggregateNode(StringTerminalNode aggFuncName, ParseExpressionNode expression) {

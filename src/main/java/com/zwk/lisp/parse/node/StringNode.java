@@ -10,6 +10,7 @@ public class StringNode extends LispTerminalNode<String>{
 
     public StringNode(StringTerminalNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

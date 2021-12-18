@@ -10,6 +10,7 @@ public class CommonParseExpressionNode extends CommonExpressionNode{
 
     public CommonParseExpressionNode(ParseExpressionNode parseExpression) {
         this.parseExpression = parseExpression;
+        setChildrenParent();
     }
 
     @Override

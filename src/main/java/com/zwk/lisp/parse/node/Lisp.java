@@ -10,6 +10,7 @@ public class Lisp extends LispNode{
 
     public Lisp(ParseExpressionNode parseExpressionNode) {
         this.parseExpressionNode = parseExpressionNode;
+        setChildrenParent();
     }
 
     @Override

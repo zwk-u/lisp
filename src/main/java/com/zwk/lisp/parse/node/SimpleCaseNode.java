@@ -14,6 +14,7 @@ public class SimpleCaseNode extends CaseNode{
         this.id = id;
         this.whenClauses = whenClauses;
         this.elseValue = elseValue;
+        setChildrenParent();
     }
 
     @Override

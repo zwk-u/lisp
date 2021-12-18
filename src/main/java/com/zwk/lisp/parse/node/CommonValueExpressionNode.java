@@ -10,6 +10,7 @@ public class CommonValueExpressionNode extends CommonExpressionNode{
 
     public CommonValueExpressionNode(ValueExpressionNode valueExpression) {
         this.valueExpression = valueExpression;
+        setChildrenParent();
     }
 
     @Override

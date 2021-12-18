@@ -10,6 +10,7 @@ public class CastExpressionNode extends LispNode{
 
     public CastExpressionNode(CastNode cast) {
         this.cast = cast;
+        setChildrenParent();
     }
 
     @Override

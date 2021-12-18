@@ -14,6 +14,7 @@ public class SingleConditionClauseNode extends ConditionClauseNode {
         this.op = op;
         this.id = id;
         this.cond = cond;
+        setChildrenParent();
     }
 
     @Override

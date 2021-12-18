@@ -10,6 +10,7 @@ public class AggregateParseExpressionNode extends ParseExpressionNode {
 
     public AggregateParseExpressionNode(AggregateNode node) {
         this.node = node;
+        setChildrenParent();
     }
 
 

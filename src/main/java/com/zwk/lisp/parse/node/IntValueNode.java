@@ -10,6 +10,7 @@ public class IntValueNode extends LispTerminalNode<Integer>{
 
     public IntValueNode(IntTerminalNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

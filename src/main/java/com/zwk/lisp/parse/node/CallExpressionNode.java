@@ -10,6 +10,7 @@ public class CallExpressionNode extends LispNode{
 
     public CallExpressionNode(CallNode call) {
         this.call = call;
+        setChildrenParent();
     }
 
     @Override

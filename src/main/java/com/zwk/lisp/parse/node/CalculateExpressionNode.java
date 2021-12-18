@@ -10,6 +10,7 @@ public class CalculateExpressionNode extends LispNode{
 
     public CalculateExpressionNode(CalculateNode calculate) {
         this.calculate = calculate;
+        setChildrenParent();
     }
 
     @Override

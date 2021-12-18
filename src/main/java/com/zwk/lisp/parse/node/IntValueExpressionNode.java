@@ -10,6 +10,7 @@ public class IntValueExpressionNode extends ValueExpressionNode{
 
     public IntValueExpressionNode(IntValueNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

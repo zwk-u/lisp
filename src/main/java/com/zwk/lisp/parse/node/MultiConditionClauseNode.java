@@ -14,6 +14,7 @@ public class MultiConditionClauseNode extends ConditionClauseNode {
         this.op = op;
         this.left = left;
         this.right = right;
+        setChildrenParent();
     }
 
     @Override

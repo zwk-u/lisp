@@ -10,6 +10,7 @@ public class DoubleLiteralValueExpressionNode extends ValueExpressionNode{
 
     public DoubleLiteralValueExpressionNode(DoubleTerminalNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

@@ -2,20 +2,20 @@ package com.zwk.lisp.parse.node;
 
 import com.zwk.lisp.parse.LispNodeVisitor;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SimpleClauseNode extends LispNode{
+public class SimpleClauseNode extends LispNode {
     private ValueExpressionNode cond;
 
     public SimpleClauseNode(ValueExpressionNode cond) {
         this.cond = cond;
+        setChildrenParent();
     }
 
     @Override
     public <C, R> R visit(LispNodeVisitor<C, R> visitor, C context) {
-        return visitor.visitSimpleClauseNode(this,context);
+        return visitor.visitSimpleClauseNode(this, context);
     }
 
     @Override

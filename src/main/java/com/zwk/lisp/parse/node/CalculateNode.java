@@ -14,6 +14,7 @@ public class CalculateNode extends ParseExpressionNode {
         this.operator = operator;
         this.left = left;
         this.right = right;
+        setChildrenParent();
     }
 
     @Override

@@ -12,6 +12,7 @@ public class SimpleWhenClauseNode extends WhenClauseNode {
     public SimpleWhenClauseNode(SimpleClauseNode cond, ValueExpressionNode value) {
         this.cond = cond;
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

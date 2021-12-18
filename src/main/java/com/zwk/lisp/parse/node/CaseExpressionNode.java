@@ -10,6 +10,7 @@ public class CaseExpressionNode extends ParseExpressionNode {
 
     public CaseExpressionNode(CaseNode caseNode) {
         this.caseNode = caseNode;
+        setChildrenParent();
     }
 
     @Override

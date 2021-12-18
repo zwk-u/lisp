@@ -10,6 +10,7 @@ public class StringValueExpressionNode extends ValueExpressionNode{
 
     public StringValueExpressionNode(StringNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

@@ -12,6 +12,7 @@ public class CastNode extends LispNode {
     public CastNode(IdTerminalNode type, IntTerminalNode id) {
         this.type = type;
         this.id = id;
+        setChildrenParent();
     }
 
     @Override

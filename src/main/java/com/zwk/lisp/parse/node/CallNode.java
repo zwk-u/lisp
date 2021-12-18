@@ -12,6 +12,7 @@ public class CallNode extends LispNode {
     public CallNode(IdTerminalNode funcName, List<CommonExpressionNode> commonExpressions) {
         this.funcName = funcName;
         this.commonExpressions = commonExpressions;
+        setChildrenParent();
     }
 
     @Override

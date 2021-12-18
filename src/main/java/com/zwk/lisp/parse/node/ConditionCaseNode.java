@@ -12,6 +12,7 @@ public class ConditionCaseNode extends CaseNode {
     public ConditionCaseNode(List<WhenClauseNode> whenClauses, ValueExpressionNode elseValue) {
         this.whenClauses = whenClauses;
         this.elseValue = elseValue;
+        setChildrenParent();
     }
 
     @Override

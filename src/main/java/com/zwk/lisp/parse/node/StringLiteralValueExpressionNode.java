@@ -10,6 +10,7 @@ public class StringLiteralValueExpressionNode extends ValueExpressionNode{
 
     public StringLiteralValueExpressionNode(StringTerminalNode value) {
         this.value = value;
+        setChildrenParent();
     }
 
     @Override

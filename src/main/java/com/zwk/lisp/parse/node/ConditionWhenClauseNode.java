@@ -12,6 +12,7 @@ public class ConditionWhenClauseNode extends WhenClauseNode{
     public ConditionWhenClauseNode(ConditionClauseNode cond, ValueExpressionNode value) {
         this.cond = cond;
         this.value = value;
+        setChildrenParent();
     }
 
     @Override
