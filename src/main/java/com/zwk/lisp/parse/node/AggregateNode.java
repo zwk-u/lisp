@@ -12,14 +12,18 @@ public class AggregateNode extends LispNode {
     private ParseExpressionNode expression;
 
     public AggregateNode(StringTerminalNode aggFuncName, IntTerminalNode id) {
-        this.aggFuncName = aggFuncName;
-        this.id = id;
-        setChildrenParent();
+        this(aggFuncName, id, null);
     }
 
     public AggregateNode(StringTerminalNode aggFuncName, ParseExpressionNode expression) {
+        this(aggFuncName, null, expression);
+    }
+
+    private AggregateNode(StringTerminalNode aggFuncName, IntTerminalNode id, ParseExpressionNode expression) {
         this.aggFuncName = aggFuncName;
+        this.id = id;
         this.expression = expression;
+        setChildrenParent();
     }
 
     @Override
