@@ -1,40 +1,47 @@
 package com.zwk.lisp.impl;
 
+import java.util.Arrays;
+
 public class PrettyString {
     private static final char SPACE = 32;
 
     public static String removeExtraSpace(CharSequence sequence) {
         if (sequence == null) {
-            throw new NullPointerException("pretty string cannot be null!");
+            return null;
         }
         int length = sequence.length();
         if (length == 0) {
             return "";
         }
-        StringBuilder sb = new StringBuilder();
-        int count = 0;
+        int spaceCount = 0;
         int i = 0;
-        while (sequence.charAt(i) == SPACE) {
+        while (sequence.charAt(i) <= SPACE) {
             i++;
             if (i >= length) {
                 return "";
             }
         }
         length = length - 1;
-        while (sequence.charAt(length) == SPACE) {
+        while (sequence.charAt(length) <= SPACE) {
             length--;
         }
+        int newLength = length - i + 1;
+        char[] chars = new char[newLength];
+        int index = 0;
         for (; i <= length; i++) {
             char c = sequence.charAt(i);
             if (c != SPACE) {
-                sb.append(c);
-                count = 0;
+                chars[index++] = c;
+                spaceCount = 0;
             }
-            if (c == SPACE && count == 0) {
-                sb.append(SPACE);
-                count++;
+            if (c == SPACE && spaceCount == 0) {
+                chars[index++] = c;
+                spaceCount++;
             }
         }
-        return sb.toString();
+        if (!(newLength == index)) {
+            chars = Arrays.copyOf(chars, index);
+        }
+        return new String(chars);
     }
 }
