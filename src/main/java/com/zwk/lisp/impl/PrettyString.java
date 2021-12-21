@@ -35,7 +35,7 @@ public class PrettyString {
                 spaceCount = 0;
             }
             if (c <= SPACE && spaceCount == 0) {
-                chars[index++] = c;
+                chars[index++] = SPACE;
                 spaceCount++;
             }
         }
