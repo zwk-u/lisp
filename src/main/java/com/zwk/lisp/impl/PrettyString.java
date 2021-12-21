@@ -30,11 +30,11 @@ public class PrettyString {
         int index = 0;
         for (; i <= length; i++) {
             char c = sequence.charAt(i);
-            if (c != SPACE) {
+            if (c > SPACE) {
                 chars[index++] = c;
                 spaceCount = 0;
             }
-            if (c == SPACE && spaceCount == 0) {
+            if (c <= SPACE && spaceCount == 0) {
                 chars[index++] = c;
                 spaceCount++;
             }
