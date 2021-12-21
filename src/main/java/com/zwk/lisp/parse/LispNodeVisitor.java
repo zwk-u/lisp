@@ -72,4 +72,6 @@ public interface LispNodeVisitor<C, R> {
     R visitOriginValueExpressionNode(OriginValueExpressionNode node, C context);
 
     R visitOriginNode(OriginNode node, C context);
+
+    R visitNullLiteralValueExpressionNode(NullLiteralValueExpressionNode node, C context);
 }

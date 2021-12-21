@@ -165,6 +165,13 @@ public interface LispVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStringLiteralValueExpression(LispParser.StringLiteralValueExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code nullLiteralValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code intValueExpression}
 	 * labeled alternative in {@link LispParser#valueExpression}.
 	 * @param ctx the parse tree

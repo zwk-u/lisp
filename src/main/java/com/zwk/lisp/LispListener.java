@@ -270,6 +270,18 @@ public interface LispListener extends ParseTreeListener {
 	 */
 	void exitStringLiteralValueExpression(LispParser.StringLiteralValueExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code nullLiteralValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nullLiteralValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code intValueExpression}
 	 * labeled alternative in {@link LispParser#valueExpression}.
 	 * @param ctx the parse tree

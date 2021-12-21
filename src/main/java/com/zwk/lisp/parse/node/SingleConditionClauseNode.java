@@ -9,11 +9,13 @@ public class SingleConditionClauseNode extends ConditionClauseNode {
     private OperatorTerminalNode op;
     private IntTerminalNode id;
     private ValueExpressionNode cond;
+    private boolean not;
 
-    public SingleConditionClauseNode(OperatorTerminalNode op, IntTerminalNode id, ValueExpressionNode cond) {
+    public SingleConditionClauseNode(OperatorTerminalNode op, IntTerminalNode id, ValueExpressionNode cond, boolean not) {
         this.op = op;
         this.id = id;
         this.cond = cond;
+        this.not = not;
         setChildrenParent();
     }
 
@@ -37,5 +39,9 @@ public class SingleConditionClauseNode extends ConditionClauseNode {
 
     public ValueExpressionNode getCond() {
         return cond;
+    }
+
+    public boolean isNot() {
+        return not;
     }
 }

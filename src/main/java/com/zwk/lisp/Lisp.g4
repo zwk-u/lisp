@@ -58,14 +58,15 @@ whenClause
 simpleClause: '(' cond = valueExpression ')';
 
 conditionClause
-                : '(' op = OPERATOR id = INT cond = valueExpression ')'                 #singleConditionClause
-                | '(' op = (AND |OR) left = conditionClause right = conditionClause ')' #multiConditionClause
+                : '(' op = OPERATOR not=NOT? id = INT cond = valueExpression ')'                 #singleConditionClause
+                | '(' op = (AND |OR) left = conditionClause right = conditionClause ')'          #multiConditionClause
                 ;
 //INT和intValue是为了区分到底是字段id还是int类型的数值，单纯的INT代表字段ID，intValue代表字面量int值
 valueExpression
                 : INT                       #intLiteralValueExpression
                 | DOUBLE                    #doubleLiteralValueExpression
                 | STRING                    #stringLiteralValueExpression
+                | NULL                      #nullLiteralValueExpression
                 | intValue                  #intValueExpression
                 | string                    #stringValueExpression
                 | origin                    #originValueExpression
@@ -80,7 +81,7 @@ string: '(' STRINGWORD STRING ')';
 */
 origin: '(' ORIGIN STRING ')';
 
-OPERATOR: MUL|DIV|PLUS|SUB|EQUAL|GT|LT|GE|LE|NE;
+OPERATOR: MUL|DIV|PLUS|SUB|EQUAL|GT|LT|GE|LE|NE|IS;
 
 AGGFUNC: COUNT|SUM|AVG|MAX|MIN;
 
@@ -111,6 +112,12 @@ STRINGWORD:'STRING';
 AND: 'AND';
 
 OR: 'OR';
+
+NULL: 'NULL';
+
+IS: 'IS';
+
+NOT: 'NOT';
 
 ORIGIN: 'ORIGIN';
 

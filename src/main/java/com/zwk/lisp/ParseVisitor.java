@@ -61,7 +61,11 @@ public class ParseVisitor extends LispBaseVisitor<LispNode> {
         for (LispParser.WhenClauseContext context : ctx.whenClause()) {
             whenClauses.add((WhenClauseNode) visit(context));
         }
-        return new ConditionCaseNode(whenClauses, (ValueExpressionNode) visit(ctx.elseValue));
+        ValueExpressionNode elseValue = null;
+        if (ctx.elseValue != null) {
+            elseValue = (ValueExpressionNode) visit(ctx.elseValue);
+        }
+        return new ConditionCaseNode(whenClauses, elseValue);
     }
 
     @Override
@@ -95,7 +99,13 @@ public class ParseVisitor extends LispBaseVisitor<LispNode> {
     public LispNode visitSingleConditionClause(LispParser.SingleConditionClauseContext ctx) {
         OperatorTerminalNode op = new OperatorTerminalNode(ctx.op.getText());
         IntTerminalNode id = new IntTerminalNode(Integer.parseInt(ctx.id.getText()));
-        return new SingleConditionClauseNode(op, id, (ValueExpressionNode) visit(ctx.cond));
+        boolean not = ctx.not != null;
+        return new SingleConditionClauseNode(op, id, (ValueExpressionNode) visit(ctx.cond), not);
+    }
+
+    @Override
+    public LispNode visitNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx) {
+        return new NullLiteralValueExpressionNode(new StringTerminalNode(ctx.NULL().getText()));
     }
 
     @Override

@@ -292,6 +292,18 @@ public class LispBaseListener implements LispListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIntValueExpression(LispParser.IntValueExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}

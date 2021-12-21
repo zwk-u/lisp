@@ -178,6 +178,13 @@ public class LispBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements L
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitNullLiteralValueExpression(LispParser.NullLiteralValueExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitIntValueExpression(LispParser.IntValueExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
