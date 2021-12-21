@@ -316,6 +316,18 @@ public class LispBaseListener implements LispListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterOriginValueExpression(LispParser.OriginValueExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOriginValueExpression(LispParser.OriginValueExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIntValue(LispParser.IntValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -335,6 +347,18 @@ public class LispBaseListener implements LispListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitString(LispParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOrigin(LispParser.OriginContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrigin(LispParser.OriginContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

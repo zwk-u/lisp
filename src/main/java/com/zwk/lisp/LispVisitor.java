@@ -179,6 +179,13 @@ public interface LispVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStringValueExpression(LispParser.StringValueExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code originValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOriginValueExpression(LispParser.OriginValueExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LispParser#intValue}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -190,4 +197,10 @@ public interface LispVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitString(LispParser.StringContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LispParser#origin}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrigin(LispParser.OriginContext ctx);
 }

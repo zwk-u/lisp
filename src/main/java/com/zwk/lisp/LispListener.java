@@ -294,6 +294,18 @@ public interface LispListener extends ParseTreeListener {
 	 */
 	void exitStringValueExpression(LispParser.StringValueExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code originValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterOriginValueExpression(LispParser.OriginValueExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code originValueExpression}
+	 * labeled alternative in {@link LispParser#valueExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitOriginValueExpression(LispParser.OriginValueExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LispParser#intValue}.
 	 * @param ctx the parse tree
 	 */
@@ -313,4 +325,14 @@ public interface LispListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitString(LispParser.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LispParser#origin}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrigin(LispParser.OriginContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LispParser#origin}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrigin(LispParser.OriginContext ctx);
 }

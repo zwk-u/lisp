@@ -159,6 +159,16 @@ public class LispBaseNodeVisitor<C, R> implements LispNodeVisitor<C, R> {
     }
 
     @Override
+    public R visitOriginValueExpressionNode(OriginValueExpressionNode node, C context) {
+        return visit(node, context);
+    }
+
+    @Override
+    public R visitOriginNode(OriginNode node, C context) {
+        return visit(node, context);
+    }
+
+    @Override
     public R visit(LispNode node, C context) {
         R r = null;
         for (LispNode child : node.getChildren()) {

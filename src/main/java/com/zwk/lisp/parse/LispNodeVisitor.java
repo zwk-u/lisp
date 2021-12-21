@@ -68,4 +68,8 @@ public interface LispNodeVisitor<C, R> {
     R visitConditionWhenClauseNode(ConditionWhenClauseNode node, C context);
 
     R visitStringValueExpressionNode(StringValueExpressionNode node, C context);
+
+    R visitOriginValueExpressionNode(OriginValueExpressionNode node, C context);
+
+    R visitOriginNode(OriginNode node, C context);
 }

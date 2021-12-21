@@ -5,7 +5,7 @@ import com.zwk.lisp.parse.LispNodeVisitor;
 import java.util.Collections;
 import java.util.List;
 
-public class CallExpressionNode extends LispNode{
+public class CallExpressionNode extends ParseExpressionNode{
     private CallNode call;
 
     public CallExpressionNode(CallNode call) {

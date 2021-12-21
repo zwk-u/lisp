@@ -140,6 +140,19 @@ public class ParseVisitor extends LispBaseVisitor<LispNode> {
     }
 
     @Override
+    public LispNode visitOriginValueExpression(LispParser.OriginValueExpressionContext ctx) {
+        return new OriginValueExpressionNode((OriginNode) visit(ctx.origin()));
+    }
+
+    @Override
+    public LispNode visitOrigin(LispParser.OriginContext ctx) {
+        String val = ctx.STRING().getText();
+        val = val.substring(1, val.length() - 1);
+        val = val.replace("\\'", "'");
+        return new OriginNode(new StringTerminalNode(val));
+    }
+
+    @Override
     public LispNode visitIntLiteralValueExpression(LispParser.IntLiteralValueExpressionContext ctx) {
         return new IntLiteralValueExpressionNode(new IntTerminalNode(Integer.parseInt(ctx.INT().getText())));
     }

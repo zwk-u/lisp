@@ -5,7 +5,7 @@ import com.zwk.lisp.parse.LispNodeVisitor;
 import java.util.Collections;
 import java.util.List;
 
-public class CalculateExpressionNode extends LispNode{
+public class CalculateExpressionNode extends ParseExpressionNode{
     private CalculateNode calculate;
 
     public CalculateExpressionNode(CalculateNode calculate) {

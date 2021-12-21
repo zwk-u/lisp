@@ -68,11 +68,14 @@ valueExpression
                 | STRING                    #stringLiteralValueExpression
                 | intValue                  #intValueExpression
                 | string                    #stringValueExpression
+                | origin                    #originValueExpression
                 ;
 
 intValue: '(' INTWORD INT ')';
 
 string: '(' STRINGWORD STRING ')';
+
+origin: '(' ORIGIN STRING ')';
 
 OPERATOR: MUL|DIV|PLUS|SUB|EQUAL|GT|LT|GE|LE|NE;
 
@@ -106,6 +109,8 @@ AND: 'AND';
 
 OR: 'OR';
 
+ORIGIN: 'ORIGIN';
+
 INT: DIGIT+;
 
 DOUBLE: INT '.' INT;
@@ -113,7 +118,7 @@ DOUBLE: INT '.' INT;
 ID: LETTER (LETTER | DIGIT | '_')*;
 
 
-STRING: '\'' (.*?) '\'';
+STRING: '\'' ('\\\'' | ~'\'')+ '\'';
 
 fragment LETTER:[A-Z];
 

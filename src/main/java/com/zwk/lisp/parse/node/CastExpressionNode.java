@@ -5,7 +5,7 @@ import com.zwk.lisp.parse.LispNodeVisitor;
 import java.util.Collections;
 import java.util.List;
 
-public class CastExpressionNode extends LispNode{
+public class CastExpressionNode extends ParseExpressionNode{
     private CastNode cast;
 
     public CastExpressionNode(CastNode cast) {
