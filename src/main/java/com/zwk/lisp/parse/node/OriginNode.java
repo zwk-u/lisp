@@ -2,7 +2,6 @@ package com.zwk.lisp.parse.node;
 
 import com.zwk.lisp.parse.LispNodeVisitor;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class OriginNode extends LispNode {
 
     @Override
     public <C, R> R visit(LispNodeVisitor<C, R> visitor, C context) {
-        return visitor.visitOriginNode(this,context);
+        return visitor.visitOriginNode(this, context);
     }
 
     @Override

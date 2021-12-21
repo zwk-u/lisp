@@ -75,6 +75,9 @@ intValue: '(' INTWORD INT ')';
 
 string: '(' STRINGWORD STRING ')';
 
+/*origin 的用法是string中的内容会被原样放置在用到的位置
+  例如：(> (CAST DATE 123) (ORIGIN 'date \'2021-12-10\'')) --> cast(date as DATE)>date '2021-12-10'
+*/
 origin: '(' ORIGIN STRING ')';
 
 OPERATOR: MUL|DIV|PLUS|SUB|EQUAL|GT|LT|GE|LE|NE;

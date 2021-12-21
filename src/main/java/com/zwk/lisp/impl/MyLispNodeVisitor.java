@@ -119,11 +119,6 @@ public class MyLispNodeVisitor extends LispBaseNodeVisitor<Void, StringBuilder> 
     }
 
     @Override
-    public StringBuilder visitOriginNode(OriginNode node, Void context) {
-        return new StringBuilder(node.getLiteral().getValue());
-    }
-
-    @Override
     public StringBuilder visitIntTerminalNode(IntTerminalNode node, Void context) {
         StringBuilder sb = new StringBuilder();
         sb.append(node.getValue());
